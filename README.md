@@ -1,6 +1,7 @@
 # todoey_flutter
 
 A new Flutter project.
+Flutter Learning Project
 
 ## Getting Started
 
