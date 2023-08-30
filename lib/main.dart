@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       create: (_) => Data(),
       child: MaterialApp(
         theme: ThemeData(
-          accentColor: Color(0xFFffaf42),
+          hintColor: const Color(0xFFffaf42),
           colorScheme:
               ColorScheme.fromSwatch().copyWith(secondary: Colors.grey[300]),
         ),
