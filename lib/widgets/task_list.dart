@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:notebook/models/task_data.dart';
 
 class TaskList extends StatelessWidget {
-  const TaskList({Key? key}) : super(key: key);
+  const TaskList({super.key});
 
   @override
   Widget build(BuildContext context) {

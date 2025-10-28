@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:notebook/widgets/task_list.dart';
 import 'package:notebook/screens/add_task_screen.dart';
@@ -7,7 +6,7 @@ import 'package:notebook/models/task_data.dart';
 import 'info.dart';
 
 class TaskScreen extends StatefulWidget {
-  const TaskScreen({Key? key}) : super(key: key);
+  const TaskScreen({super.key});
 
   @override
   State<TaskScreen> createState() => _TaskScreenState();

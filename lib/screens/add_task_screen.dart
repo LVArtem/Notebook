@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:notebook/models/task_data.dart';
 import 'package:provider/provider.dart';
 
-class AddTaskScreen extends StatelessWidget {
-  late String newTask;
+class AddTaskScreen extends StatefulWidget {
+  const AddTaskScreen({super.key});
 
-  AddTaskScreen({Key? key}) : super(key: key);
+  @override
+  State<AddTaskScreen> createState() => _AddTaskScreenState();
+}
+
+class _AddTaskScreenState extends State<AddTaskScreen> {
+  String newTask = '';
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +23,10 @@ class AddTaskScreen extends StatelessWidget {
             'Add Task',
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 30, color: Colors.black, fontWeight: FontWeight.w600),
+              fontSize: 30,
+              color: Colors.black,
+              fontWeight: FontWeight.w600,
+            ),
           ),
           TextField(
             textCapitalization: TextCapitalization.sentences,
@@ -33,9 +42,7 @@ class AddTaskScreen extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           TextButton(
             style: TextButton.styleFrom(backgroundColor: Colors.grey),
             onPressed: () {
@@ -47,9 +54,7 @@ class AddTaskScreen extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 30),
             ),
           ),
-          const SizedBox(
-            height: 40,
-          ),
+          const SizedBox(height: 40),
         ],
       ),
     );

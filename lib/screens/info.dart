@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class Info {
-  void onBasicAlertPressed(context) {
+  void onBasicAlertPressed(BuildContext context) {
     Alert(
       context: context,
       title: "Hello",
