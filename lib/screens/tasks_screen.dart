@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:notebook/widgets/task_list.dart';
-import 'package:notebook/screens/add_task_screen.dart';
-import 'package:provider/provider.dart';
 import 'package:notebook/models/task_data.dart';
+import 'package:notebook/screens/add_task_screen.dart';
+import 'package:notebook/widgets/task_list.dart';
+import 'package:provider/provider.dart';
 import 'info.dart';
 
 class TaskScreen extends StatefulWidget {
@@ -32,8 +32,12 @@ class _TaskScreenState extends State<TaskScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            padding:
-                const EdgeInsets.only(top: 65, left: 30, right: 30, bottom: 30),
+            padding: const EdgeInsets.only(
+              top: 65,
+              left: 30,
+              right: 30,
+              bottom: 30,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -43,16 +47,14 @@ class _TaskScreenState extends State<TaskScreen> {
                     const Text(
                       'Notebook',
                       style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 50.0,
-                          fontWeight: FontWeight.w700),
+                        color: Colors.black,
+                        fontSize: 50.0,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                     Text(
                       '${context.watch<Data>().taskCount} Tasks',
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                      ),
+                      style: const TextStyle(color: Colors.black, fontSize: 18),
                     ),
                   ],
                 ),
@@ -71,7 +73,7 @@ class _TaskScreenState extends State<TaskScreen> {
                     onPressed: () {
                       Info().onBasicAlertPressed(context);
                     },
-                    shape: CircleBorder(),
+                    shape: const CircleBorder(),
                     child: const Icon(
                       Icons.list,
                       size: 30,
@@ -82,9 +84,9 @@ class _TaskScreenState extends State<TaskScreen> {
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              decoration: const BoxDecoration(
+          const Expanded(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
@@ -106,16 +108,18 @@ class _TaskScreenState extends State<TaskScreen> {
                     showModalBottomSheet(
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            topRight: Radius.circular(20)),
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                        ),
                       ),
                       context: context,
                       isScrollControlled: true,
                       builder: (context) => SingleChildScrollView(
                         child: Container(
                           padding: EdgeInsets.only(
-                              bottom: MediaQuery.of(context).viewInsets.bottom),
-                          child: AddTaskScreen(),
+                            bottom: MediaQuery.of(context).viewInsets.bottom,
+                          ),
+                          child: const AddTaskScreen(),
                         ),
                       ),
                     );
@@ -128,7 +132,7 @@ class _TaskScreenState extends State<TaskScreen> {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

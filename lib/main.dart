@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'screens/tasks_screen.dart';
-import 'package:provider/provider.dart';
 import 'package:notebook/models/task_data.dart';
+import 'package:provider/provider.dart';
+import 'screens/tasks_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +17,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData(
           hintColor: const Color(0xFFffaf42),
-          colorScheme:
-              ColorScheme.fromSwatch().copyWith(secondary: Colors.grey[300]),
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            secondary: Colors.grey[300],
+          ),
         ),
         home: const TaskScreen(),
       ),
