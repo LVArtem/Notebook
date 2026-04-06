@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
-  test:
+  analyze:
     runs-on: ubuntu-latest
 
     steps:
@@ -13,4 +13,3 @@ jobs:
 
       - run: flutter pub get
       - run: flutter analyze
-      - run: flutter test
