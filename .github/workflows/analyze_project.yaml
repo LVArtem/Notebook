@@ -1,0 +1,16 @@
+name: Analyze project
+on:
+  pull_request:
+    branches: [ master ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: subosito/flutter-action@v2
+
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
