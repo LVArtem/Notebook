@@ -33,8 +33,8 @@ class Data extends ChangeNotifier {
     notifyListeners();
   }
 
-  void saveDate() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
+  Future<void> saveDate() async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
     List<String> taskList =
         _tasks.map((item) => jsonEncode(item.toMap())).toList();
     pref.setStringList('key', taskList);
