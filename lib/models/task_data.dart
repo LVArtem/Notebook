@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:notebook/models/tasks.dart';
 import 'dart:collection';
 import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:notebook/models/tasks.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Data extends ChangeNotifier {
   List<Task> _tasks = [];
@@ -35,14 +35,15 @@ class Data extends ChangeNotifier {
 
   Future<void> saveDate() async {
     final SharedPreferences pref = await SharedPreferences.getInstance();
-    List<String> taskList =
-        _tasks.map((item) => jsonEncode(item.toMap())).toList();
-    pref.setStringList('key', taskList);
+    final List<String> taskList = _tasks
+        .map((item) => jsonEncode(item.toMap()))
+        .toList();
+    await pref.setStringList('key', taskList);
   }
 
   Future loadData() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    List<String>? taskList = pref.getStringList('key');
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    final List<String>? taskList = pref.getStringList('key');
     _tasks = taskList!.map((item) => Task.fromMap(jsonDecode(item))).toList();
   }
 }

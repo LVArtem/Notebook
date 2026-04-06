@@ -8,9 +8,7 @@ class Task {
     isDone = !isDone;
   }
 
-  Task.fromMap(Map map)
-      : name = map['name'],
-        isDone = map['isDone'];
+  Task.fromMap(Map map) : name = map['name'], isDone = map['isDone'];
 
   Map toMap() {
     return {'name': name, 'isDone': isDone};
